@@ -2,15 +2,16 @@
 using namespace std;
 void sort(int a[],int n)
 {
-    for(int i=n-1;i>=0;i--)
+    for(int i=0;i<n;i++)
     {
-        for(int j=0;j<i;j++)
+        int j=i;
+        while(j>0&&a[j-1]>a[j])
         {
-            if(a[j]>a[j+1])
-            swap(a[j],a[j+1]);
+            swap(a[j-1],a[j]);
+            j--;
         }
     }
-     cout<<"sorted array\n";
+    cout<<"sorted array\n";
     for(int i=0;i<n;i++)
     cout<<a[i]<<" ";
 }
@@ -25,5 +26,3 @@ int main()
     cin>>a[i];
     sort(a,n);
 }
-
-
